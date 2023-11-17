@@ -11,6 +11,45 @@
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+    <!-- Pendo Snippet -->
+<script>
+(function(apiKey){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
+    v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
+        o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+        y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+        z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+
+        // This function creates visitors and accounts in Pendo
+        // You will need to replace <visitor-id-goes-here> and <account-id-goes-here> with values you use in your app
+        // Please use Strings, Numbers, or Bools for value types.
+        pendo.initialize({
+            visitor: {
+                id:              'visitorWDM', // Required if user is logged in
+                email:            'doug@pendo.io',// Recommended if using Pendo Feedback, or NPS Email
+                full_name:        'Doug McDaniel',// Recommended if using Pendo Feedback
+                role:             'Admin'// Optional
+
+                // You can add any additional visitor level key-values here,
+                // as long as it's not one of the above reserved names.
+            },
+
+            account: {
+                id:              'Account 1', // Highly recommended, required if using Pendo Feedback
+                name:             'Big Doug Enterprises',// Optional
+                is_paying:           'paid_account', // Recommended if using Pendo Feedback
+                arr_value:            '500000',// Recommended if using Pendo Feedback
+                planLevel:             'Platinum',// Optional
+                // planPrice:    // Optional
+                creationDate:             '11/17/2023'// Optional
+
+                // You can add any additional account level key-values here,
+                // as long as it's not one of the above reserved names.
+            }
+        });
+})('f53cc41e-86b1-4883-429d-901686edabf5');
+</script>
+    
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
